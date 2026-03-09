@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🐾 Medicao Clínica Veterinária & Pet Shop
 
-## Getting Started
+Uma Landing Page **Premium** e de alta conversão desenvolvida para clínicas veterinárias e pet shops. Este projeto foi construído com foco absoluto na Experiência do Utilizador (UX), utilizando interações modernas como **Glassmorphism 3D**, micro-animações e integração direta de agendamentos via WhatsApp.
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-15+-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Funcionalidades em Destaque (Features)
+
+- **Design Premium (Glassmorphism 3D):** Cartões translúcidos com efeito de vidro fosco, sombras dinâmicas e pontos de luz (glows) que reagem ao hover.
+- **Bot Inteligente de WhatsApp:** Um botão flutuante não intrusivo que abre um mini-menu de triagem (Emergência, Banho, Geral) antes de redirecionar para o WhatsApp com mensagens pré-formatadas.
+- **Slider "Antes & Depois" Interativo:** Um componente mágico onde o cliente arrasta o dedo/rato para ver a transformação do serviço de Estética Animal.
+- **Grid de Serviços Dinâmico:** Cartões de serviços compactos que se expandem com animações suaves revelando sub-serviços específicos.
+- **Carrosséis Nativos (Snap-Scroll):** Navegação fluida por arrasto horizontal para os produtos do Pet Shop e Avaliações do Google.
+- **Proteção Ocular (Off-White):** Fundo da aplicação num tom `#F8FAFC` suave acompanhado de texturas de bolinhas (dots) para conforto visual e leitura.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+Este projeto foi desenvolvido com as ferramentas mais modernas do ecossistema front-end para garantir máxima performance e facilidade de manutenção:
+
+- **[Next.js (App Router)](https://nextjs.org/):** Framework React para renderização rápida, otimização automática de imagens e roteamento moderno.
+- **[Tailwind CSS v4](https://tailwindcss.com/):** O novíssimo motor do Tailwind configurado diretamente via `@theme` no CSS, sem necessidade de arquivos de configuração externos.
+- **[TypeScript](https://www.typescriptlang.org/):** Tipagem estática para um código robusto, previsível e livre de erros estruturais.
+- **[Lucide React](https://lucide.dev/):** Biblioteca de ícones vetoriais leves, limpos e altamente customizáveis.
+- **[Google Fonts (Otimizado)](https://nextjs.org/docs/app/building-your-application/optimizing/fonts):** Uso das fontes *Lily Script One* e *Sofia Sans* injetadas no momento do build (Zero Layout Shift).
+
+---
+
+## 🧠 Arquitetura Inteligente (O "Mini-CMS")
+
+Uma das maiores vantagens deste projeto é a separação total entre a **Lógica de Design** e o **Conteúdo**. 
+
+Todo o conteúdo dinâmico do site (serviços, produtos, avaliações, links do WhatsApp, iframe do mapa de localização) está centralizado num único ficheiro: `src/config/site-config.ts`. 
+
+Isto significa que qualquer atualização de informações, mudança de preços ou novas fotos de "Antes e Depois" podem ser feitas em segundos por qualquer pessoa, sem risco de quebrar o layout da aplicação.
+
+```typescript
+// Exemplo da facilidade de edição no site-config.ts
+export const siteConfig = {
+  contact: {
+    phone: "(85) 99105-7850",
+    whatsapp: "[https://wa.me/5585991057850](https://wa.me/5585991057850)", 
+    serviceArea: "Dionísio Torres e proximidades",
+  },
+  beforeAfter: {
+    beforeImage: "/fotos/antes-sujo.jpg",
+    afterImage: "/fotos/depois-limpo.jpg"
+  }
+  // ... produtos, avaliações e serviços!
+};
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
+## 🌍 Como Fazer o Deploy (Vercel)
+Este projeto está perfeitamente otimizado para ser publicado na Vercel, a plataforma oficial dos criadores do Next.js. O processo é 100% gratuito e leva menos de 3 minutos:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Crie uma conta gratuita na Vercel.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+No painel inicial, clique no botão "Add New" e depois em "Project".
 
-## Learn More
+Conecte a sua conta do GitHub e clique em "Import" ao lado do repositório deste Pet Shop.
 
-To learn more about Next.js, take a look at the following resources:
+A Vercel vai detetar automaticamente que é um projeto Next.js. Não precisa de alterar nenhuma configuração de build.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Clique no botão azul "Deploy" e aguarde a magia acontecer.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Pronto! O seu site estará online, rápido e com um link seguro (HTTPS) pronto a ser enviado aos clientes.
 
-## Deploy on Vercel
+## 👨‍💻 Autor / Créditos
+Desenvolvido com muita dedicação, código limpo e foco absoluto em UI/UX para conversão de vendas.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Portfólio: Coloque aqui o link do seu portfólio
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+LinkedIn: Coloque aqui o seu LinkedIn
+
+GitHub: Coloque aqui o seu GitHub
+
+Se este projeto o ajudou ou inspirou de alguma forma, sinta-se à vontade para deixar uma ⭐ neste repositório!
