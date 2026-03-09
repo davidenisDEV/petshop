@@ -1,21 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  /* Nova Paleta de Cores do PetShop */
-  --color-background: #F8FAFC; /* Branco Suave (Off-White) para não cansar a vista */
-  --color-primary: #fbfc08; /* Amarelo Medicao */
-  --color-primary-light: #fefd8a;
-  --color-primary-dark: #d0c800;
-  --color-accent: #d83328; /* Vermelho Medicao */
-  --color-accent-hover: #b92a20;
-  --color-text-main: #334155; /* Cinza escuro para facilitar leitura */
-  --color-text-muted: #64748B;
+  /* Paleta "Confiança Premium" */
+  --color-background: #F8FAFC; /* Branco Gelo (Slate 50) */
+  
+  --color-primary: #1E3A8A; /* Azul Royal (Confiança) */
+  --color-primary-light: #3B82F6;
+  --color-primary-dark: #1E40AF;
+  
+  --color-accent: #FBBF24; /* Amarelo Âmbar (Alegria/Destaques) */
+  --color-accent-hover: #F59E0B;
+  
+  --color-emergency: #EF4444; /* Vermelho (Apenas Urgências) */
+  --color-emergency-hover: #DC2626;
 
-  /* Fontes Personalizadas Vinculadas ao layout.tsx */
+  --color-text-main: #0F172A; /* Quase Preto (Conforto de leitura) */
+  --color-text-muted: #475569;
+
   --font-display: var(--font-lily), "Lily Script One", system-ui, sans-serif;
   --font-sans: var(--font-sofia), "Sofia Sans", system-ui, sans-serif;
 
-  /* Animações Flutuantes */
   --animate-float-slow: float 6s ease-in-out infinite;
   --animate-float-fast: float 4s ease-in-out infinite;
 
@@ -25,50 +29,38 @@
   }
 }
 
-/* --- ESTILOS GLOBAIS --- */
 @layer base {
   body {
     background-color: var(--color-background);
     color: var(--color-text-main);
-    font-family: var(--font-sans); /* Aplica a Sofia Sans por defeito */
+    font-family: var(--font-sans);
     overflow-x: hidden;
     
-    /* Textura de Bolinhas Vermelhas Suaves (Acolhedor e Branded) */
-    background-image: radial-gradient(rgba(216, 51, 40, 0.08) 2px, transparent 2px);
+    /* Textura com a nova cor primária (Azul muito suave) */
+    background-image: radial-gradient(rgba(30, 58, 138, 0.05) 2px, transparent 2px);
     background-size: 30px 30px;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display); /* Aplica a Lily Script One nos Títulos */
-    color: var(--color-accent);
+    font-family: var(--font-display);
+    color: var(--color-primary); /* Títulos em Azul Royal */
   }
 }
 
-/* Efeito Glassmorphism Limpo e Claro */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.7); /* Transparência ligeiramente aumentada para compensar o fundo mais escuro */
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px rgba(30, 58, 138, 0.05); /* Sombra azulada */
 }
 
 ::selection {
-  background-color: var(--color-primary); /* Seleção Amarela */
-  color: var(--color-accent); /* Texto Vermelho na seleção */
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
 }
 
-/* Scrollbar com as novas cores */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-background);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-primary-dark);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent);
-}
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-background); }
+::-webkit-scrollbar-thumb { background: var(--color-primary-light); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }

@@ -16,6 +16,8 @@ export const siteConfig = {
     address: "Av. Antônio Sales, 707 - Joaquim Távora, Fortaleza - CE, 60135-101",
     serviceArea: "Dionísio Torres e proximidades",
     hours: "Aberto 24 horas",
+    wazeLink: "https://waze.com/ul?q=Av.+Antônio+Sales,+707+-+Joaquim+Távora,+Fortaleza",
+    googleMapsLink: "https://maps.google.com/?q=Av.+Antônio+Sales,+707+-+Joaquim+Távora,+Fortaleza"
   },
 
   map: {
@@ -27,40 +29,57 @@ export const siteConfig = {
     afterImage: "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&q=80&w=1000"
   },
 
+  vetChief: {
+    name: "Dr(a). Nome Sobrenome",
+    role: "Médico(a) Veterinário(a) Diretor(a)",
+    crmv: "CRMV-CE 12345",
+    description: "Com mais de 10 anos de experiência em clínica médica e cirúrgica de pequenos animais, lidero uma equipa apaixonada por salvar vidas e garantir o bem-estar do seu melhor amigo.",
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800", 
+  },
+
+  // Galeria de Fotos Atualizada para usar arquivos locais
+  gallery: [
+    "/gallery/bia.jpeg",
+    "/gallery/bia2.jpeg",
+    "/gallery/marley.jpeg",
+    "/gallery/marley2.jpeg",
+    "/gallery/ice.jpeg",
+    "/gallery/ice2.jpeg"
+  ],
+
+  faqs: [
+    { question: "Vocês aceitam plano de saúde pet?", answer: "Sim! Trabalhamos com os principais planos de saúde pet do mercado. Consulte a nossa equipa pelo WhatsApp para verificar a cobertura do seu plano." },
+    { question: "Como funciona o internamento 24h?", answer: "O nosso internamento conta com monitoramento veterinário constante, 24 horas por dia. O seu pet nunca fica sozinho e os tutores recebem boletins médicos diários com fotos e vídeos." },
+    { question: "Preciso agendar o banho e tosa com antecedência?", answer: "Recomendamos o agendamento prévio para garantir o melhor horário para si, mas também aceitamos encaixes dependendo da disponibilidade no dia." },
+    { question: "Quais as formas de pagamento aceitas?", answer: "Aceitamos PIX, cartões de crédito e débito. Parcelamos procedimentos cirúrgicos e exames complexos para facilitar o cuidado com o seu pet." },
+  ],
+
   services: [
     { 
-      id: "clinica", 
-      name: "Clínica & Especialidades", 
-      icon: "🩺", 
+      id: "clinica", name: "Clínica & Especialidades", icon: "🩺", 
       desc: "Atendimento 24h, consultas de rotina e especialidades médicas para a saúde completa do seu pet.",
-      activeBg: "bg-primary text-[#3160a6]", // Amarelo com texto Azul (Novo contraste)
+      activeBg: "bg-primary text-white", 
       subServices: [
         { name: "Urgência 24h", desc: "Atendimento imediato para salvar vidas.", whatsappText: "🚨 Olá! Preciso de atendimento de URGÊNCIA para o meu pet." },
         { name: "Consultas & Exames", desc: "Check-ups, Endoscopia e Oftalmologia.", whatsappText: "🩺 Olá! Gostaria de agendar uma consulta/exame para o meu pet." },
-        { name: "Internamento", desc: "Monitoramento intensivo dia e noite.", whatsappText: "🌙 Olá! Preciso de informações sobre o internamento." },
-        { name: "Oncologia", desc: "Tratamento oncológico humanizado.", whatsappText: "🎗️ Olá! Gostaria de falar sobre o tratamento oncológico." },
       ]
     },
     { 
-      id: "estetica", 
-      name: "Estética & Bem-Estar", 
-      icon: "🛁", 
+      id: "estetica", name: "Estética & Bem-Estar", icon: "🛁", 
       desc: "Banhos relaxantes, tosas estilosas e um hotel seguro e divertido para quando você precisar viajar.",
-      activeBg: "bg-accent text-white", // Vermelho com texto Branco
+      activeBg: "bg-accent text-primary-dark", 
       subServices: [
         { name: "Banho e Tosa", desc: "Estética animal com produtos premium.", whatsappText: "🛁 Olá! Gostaria de agendar um banho e tosa." },
         { name: "Hotel para Animais", desc: "Hospedagem segura e acompanhada.", whatsappText: "🏨 Olá! Gostaria de saber valores e disponibilidade do Hotel." },
       ]
     },
     { 
-      id: "facilidades", 
-      name: "Pet Shop & Facilidades", 
-      icon: "🛍️", 
-      desc: "As melhores rações, brinquedos, farmácia e o nosso Táxi Dog para buscar e levar o seu melhor amigo.",
-      activeBg: "bg-[#3160a6] text-white", // Fundo Azul com texto Branco (Super premium!)
+      id: "facilidades", name: "Pet Shop & Farmácia", icon: "🛍️", 
+      desc: "As melhores rações, medicamentos e brinquedos disponíveis 24h para o seu melhor amigo.",
+      activeBg: "bg-primary-dark text-white", 
       subServices: [
-        { name: "Pet Shop & Farmácia", desc: "Rações, petiscos e medicamentos.", whatsappText: "🛍️ Olá! Queria saber se vocês têm um produto disponível no Pet Shop." },
-        { name: "Táxi Dog", desc: "Transporte seguro porta a porta.", whatsappText: "🚐 Olá! Preciso agendar o Táxi Dog para buscar/levar o meu pet." },
+        { name: "Rações e Petiscos", desc: "Marcas premium e super premium.", whatsappText: "🛍️ Olá! Gostaria de comprar produtos no Pet Shop." },
+        { name: "Farmácia Veterinária", desc: "Medicamentos com orientação.", whatsappText: "💊 Olá! Preciso verificar a disponibilidade de um medicamento." },
       ]
     },
   ],
@@ -70,40 +89,16 @@ export const siteConfig = {
   },
 
   products: [
-    { 
-      id: "prod1", 
-      name: "Ração Premier Seleção Natural - Cães Adultos", 
-      price: "R$ 189,90", 
-      category: "Rações",
-      img: "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&q=80&w=400", 
-    },
-    { 
-      id: "prod2", 
-      name: "Bravecto Antipulgas e Carrapatos 10 a 20kg", 
-      price: "R$ 245,00", 
-      category: "Farmácia",
-      img: "https://images.unsplash.com/photo-1623387641177-e8a49c0b37f4?auto=format&fit=crop&q=80&w=400",
-    },
-    { 
-      id: "prod3", 
-      name: "Areia Higiênica Pipicat Floral 4kg", 
-      price: "R$ 22,90", 
-      category: "Gatos",
-      img: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=400",
-    },
-    { 
-      id: "prod4", 
-      name: "Brinquedo Osso de Borracha Resistente", 
-      price: "R$ 35,00", 
-      category: "Acessórios",
-      img: "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=400",
-    },
+    { id: "prod1", name: "Ração Premier Seleção Natural - Cães Adultos", price: "R$ 189,90", category: "Rações", img: "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&q=80&w=400" },
+    { id: "prod2", name: "Bravecto Antipulgas e Carrapatos 10 a 20kg", price: "R$ 245,00", category: "Farmácia", img: "https://images.unsplash.com/photo-1623387641177-e8a49c0b37f4?auto=format&fit=crop&q=80&w=400" },
+    { id: "prod3", name: "Areia Higiênica Pipicat Floral 4kg", price: "R$ 22,90", category: "Gatos", img: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=400" },
+    { id: "prod4", name: "Brinquedo Osso de Borracha Resistente", price: "R$ 35,00", category: "Acessórios", img: "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=400" },
   ],
 
   reviews: [
     { name: "Mariana Souza", text: "Ótimo atendimento! Salvaram o meu cachorrinho de madrugada. A equipa é super atenciosa e o ambiente é impecável.", rating: 5, date: "Há 2 semanas" },
     { name: "João Pedro Alves", text: "O banho e tosa é espetacular. O meu pet volta super cheiroso e com os pelos super macios.", rating: 5, date: "Há 1 mês" },
-    { name: "Ana Cláudia", text: "Sempre compro as rações lá. O preço é justo. O Táxi Dog também salva muito a minha vida.", rating: 5, date: "Há 3 meses" },
+    { name: "Ana Cláudia", text: "Sempre compro as rações lá. O preço é justo. O atendimento 24h salva muito a minha vida.", rating: 5, date: "Há 3 meses" },
     { name: "Ricardo Mendes", text: "Profissionais incríveis! A Dra. foi muito paciente a explicar o tratamento do meu gato.", rating: 5, date: "Há 4 meses" }
   ],
 };
