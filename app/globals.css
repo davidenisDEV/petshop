@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Nova Paleta de Cores do PetShop */
+  --color-background: #F8FAFC; /* Branco Suave (Off-White) para não cansar a vista */
+  --color-primary: #fbfc08; /* Amarelo Medicao */
+  --color-primary-light: #fefd8a;
+  --color-primary-dark: #d0c800;
+  --color-accent: #d83328; /* Vermelho Medicao */
+  --color-accent-hover: #b92a20;
+  --color-text-main: #334155; /* Cinza escuro para facilitar leitura */
+  --color-text-muted: #64748B;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Fontes Personalizadas Vinculadas ao layout.tsx */
+  --font-display: var(--font-lily), "Lily Script One", system-ui, sans-serif;
+  --font-sans: var(--font-sofia), "Sofia Sans", system-ui, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Animações Flutuantes */
+  --animate-float-slow: float 6s ease-in-out infinite;
+  --animate-float-fast: float 4s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* --- ESTILOS GLOBAIS --- */
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    font-family: var(--font-sans); /* Aplica a Sofia Sans por defeito */
+    overflow-x: hidden;
+    
+    /* Textura de Bolinhas Vermelhas Suaves (Acolhedor e Branded) */
+    background-image: radial-gradient(rgba(216, 51, 40, 0.08) 2px, transparent 2px);
+    background-size: 30px 30px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display); /* Aplica a Lily Script One nos Títulos */
+    color: var(--color-accent);
+  }
+}
+
+/* Efeito Glassmorphism Limpo e Claro */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7); /* Transparência ligeiramente aumentada para compensar o fundo mais escuro */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+::selection {
+  background-color: var(--color-primary); /* Seleção Amarela */
+  color: var(--color-accent); /* Texto Vermelho na seleção */
+}
+
+/* Scrollbar com as novas cores */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-dark);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
 }
