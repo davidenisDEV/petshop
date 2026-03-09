@@ -72,13 +72,15 @@ Clique no botão azul "Deploy" e aguarde a magia acontecer.
 
 Pronto! O seu site estará online, rápido e com um link seguro (HTTPS) pronto a ser enviado aos clientes.
 
+---
+
 ## 👨‍💻 Autor / Créditos
 Desenvolvido com muita dedicação, código limpo e foco absoluto em UI/UX para conversão de vendas.
 
-Portfólio: Coloque aqui o link do seu portfólio
+[Portfólio: ](https://master-eight-iota.vercel.app/) https://master-eight-iota.vercel.app/
 
-LinkedIn: Coloque aqui o seu LinkedIn
+[LinkedIn: ](https://www.linkedin.com/in/daviddenisdev/) https://www.linkedin.com/in/daviddenisdev/
 
-GitHub: Coloque aqui o seu GitHub
+[GitHub: ](https://github.com/davidenisDEV) https://github.com/davidenisDEV
 
 Se este projeto o ajudou ou inspirou de alguma forma, sinta-se à vontade para deixar uma ⭐ neste repositório!
